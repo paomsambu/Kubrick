@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8">
+    <title>Stanley Kubrick</title>
+    <link rel="stylesheet" href="estilo.css">
+  </head>
+  <body>
+
+    <header>
+
+    </header>
+
+    <section>
+
+    </section>
+    <script type="text/javascript">
+
+      var cabecera = document.querySelector('header');
+      var section = document.querySelector('section');
+      var solicitud = new XMLHttpRequest();
+
+      solicitud.open('GET','kub.json');
+      solicitud.responseType = 'json';
+      solicitud.send();
+
+
+      solicitud.onload = function(){
+
+        var stan = solicitud.response;
+        poblarCabecera(stan);
+        generarContenido(stan);
+      }
+
+
+      function poblarCabecera(stan){
+
+        var miTitulo = document.createElement('h1');
+        var miSubTitulo = document.createElement('h3');
+
+        miTitulo.textContent = stan['titulo'];
+        miSubTitulo.textContent = stan['subtitulo'];
+
+        cabecera.appendChild(miTitulo);
+        cabecera.appendChild(miSubTitulo);
+      }
+
+      function generarContenido(stan){
+        for (var i = 0; i < stan['peliculas'].length; i++) {
+          var producto = document.createElement('article');
+          var miH4 = document.createElement('h4');
+          var imagen = document.createElement('img');
+          var miPara1 = document.createElement('p');
+          var miPara2 = document.createElement('p');
+
+          miH4.textContent = stan['peliculas'][i].nombre;
+          imagen.src = stan['peliculas'][i].urlImagen;
+          imagen.width = "300";
+          miPara1.textContent = stan['peliculas'][i].año;
+          miPara2.textContent = stan['peliculas'][i].genero;
+
+          producto.appendChild(miH4);
+          producto.appendChild(imagen);
+          producto.appendChild(miPara1);
+          producto.appendChild(miPara2);
+
+          section.appendChild(producto);
+        }
+      }
+
+    </script>
+  </body>
+</html>

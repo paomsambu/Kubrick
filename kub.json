@@ -1,0 +1,42 @@
+{
+  "titulo":"Stanley Kubrick",
+  "subtitulo":"Sus peliculas",
+  "peliculas":[
+    {
+      "nombre":"Lolita",
+      "año":"1962",
+      "genero":"Drama",
+      "urlImagen":"1.jpg"
+    },
+    {
+      "nombre":"Dr.Strangelove",
+      "año":"1964",
+      "genero":"Fantasia - Comedia",
+      "urlImagen":"2.jpg"
+    },
+    {
+      "nombre":"La Naranja Mecánica",
+      "año":"1971",
+      "genero":"Drama",
+      "urlImagen":"3.jpg"
+    },
+    {
+      "nombre":"El Resplandor",
+      "año":"1980",
+      "genero":"Terror psicológico",
+      "urlImagen":"4.jpg"
+    },
+    {
+      "nombre":"Full Metal Jacket",
+      "año":"1987",
+      "genero":"Drama - Acción",
+      "urlImagen":"5.jpg"
+    },
+    {
+      "nombre":"Ojos Bien Cerrados",
+      "año":"1999",
+      "genero":"Drama - Misterio",
+      "urlImagen":"6.jpg"
+    }
+  ]
+}
